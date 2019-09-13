@@ -1,0 +1,149 @@
+/*
+Theme Name: Onboarde BS 4 Theme
+Theme URI: http://www.onboarde.com/
+Description: A Theme for Onboarde with Bootstrap for styling.
+Author: Sahitya Parvathaneni
+Author URI: http://www.iamsahitya.com/
+Version: 1.0
+*/
+
+
+
+
+
+html, body {
+	height: 100%;
+	background-color: rgba(46,46,46,1);
+}
+
+body {
+	display: -ms-flexbox;
+	display: flex;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 16px;
+	letter-spacing: normal;
+	color: rgba(255,255,255,1);
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Didact Gothic', sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+}
+
+#headline {
+	font-size: 200%;
+	margin-bottom: 20px;
+	letter-spacing: 0.0375em;
+}
+
+p {
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+
+blockquote {
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+pre {
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+hr {
+	border-top: 1px solid rgba(255,255,255,1);
+	width: 55%;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 10px;
+}
+
+input::-webkit-input-placeholder {
+color: rgba(255,255,255,1) !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: rgba(255,255,255,1) !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: rgba(255,255,255,1) !important;
+}
+
+input:-ms-input-placeholder {
+color: rgba(255,255,255,1) !important;
+}
+
+
+.mark, mark {
+	padding: .5em;
+	background-color: rgba(255,255,255,1);
+	white-space: nowrap;
+}
+
+.small, small {
+	font-size: 45%;
+}
+
+.form-control {
+	border: none;
+	border-radius: 0;
+	color: rgba(255,255,255,1);
+	background-color: rgba(255,255,255,0.2);
+	font-size: 0.75rem;
+	padding: 0.375rem 1.375rem;
+}
+
+.btn {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	height: calc(1.5em + .75rem + 2px);
+}
+
+.btn-primary {
+	color: rgba(46,46,46,1);
+	background-color: rgba(255,255,255,1);
+	border: none;
+	border-radius: 0;
+}
+
+.form-control:focus {
+	background-color: rgba(255,255,255,0.2);
+	color: rgba(255,255,255,1);
+}
+
+/* 14.0 - Media Queries */
+/* Extra large devices (large desktops, 1200px and up)
+ */
+ @media (min-width: 1200px) {
+
+
+	 #headline {
+	 	font-size: 250%;
+	 	margin-bottom: 30px;
+	 }
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	.form-control, .btn {
+		font-size: 1em;
+	}
+
+  }
