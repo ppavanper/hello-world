@@ -40,14 +40,15 @@
 			OnboardSure helps you overcome this challenge and reduces your risk significantly.
 			
             <p>Our product is launching soon! Interested?</p>
-            	<form name="contact" method="POST" action="thankyou.html" data-netlify="true">
-				<div class="input-group my-4 pr-3">
-				  <input type="text" class="form-control" name="email" placeholder="Enter your email" aria-label="Customer's email" aria-describedby="button-addon2">
+            	<form name="contact" method="POST" action="">
+			<div class="input-group my-4 pr-3">
+				  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" aria-label="Customer's email" aria-describedby="button-addon2">
 				  <div class="input-group-append">
 					<button class="btn btn-primary" type="submit" id="button-addon2">Get Notified</button>
 				  </div>
-				</div>
-			</form>
+			</div>
+		</form>
+		 <h4 id="response"></h4>
           </div>
           <div class="col-sm-12 col-md-5 col-lg-6 col-xl-7 py-sm-2 py-md-5">
             <img src="img/employee-onboarding.png" class="img-fluid" alt="Employee Onboarding">
@@ -60,5 +61,35 @@
         </div>
       </footer>
     </div>
+	   <script>
+    (() => {
+      const form = document.querySelector('form');
+      const submitResponse = document.querySelector('#response');
+      const formURL = 'https://42s68en2w3.execute-api.us-east-1.amazonaws.com/Prod/submitForm';
+      form.onsubmit = e => {
+        e.preventDefault();
+        // Capture the form data
+        let data = {};
+        Array.from(form).map(input => (data[input.id] = input.value));
+        console.log('Sending: ', JSON.stringify(data));
+        // Create the AJAX request
+        var xhr = new XMLHttpRequest();
+        xhr.open(form.method, formURL, true);
+        xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+        xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        // Send the collected data as JSON
+        xhr.send(JSON.stringify(data));
+        xhr.onloadend = response => {
+          if (response.target.status === 200) {
+            form.reset();
+            submitResponse.innerHTML = 'Form submitted. Success!';
+          } else {
+            submitResponse.innerHTML = 'Error! Please try again.';
+            console.error(JSON.parse(response.target.response).message);
+          }
+        };    
+      };
+    })();
+  </script>
   </body>
 </html>
